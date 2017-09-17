@@ -25,7 +25,7 @@ filtereddata$Date <- as.Date(filtereddata$Date, format="%d/%m/%Y")
 formatteddate <- paste(as.Date(filtereddata$Date), filtereddata$Time)
 filtereddata$datetime <- as.POSIXct(formatteddate)
 #set the layout
-par(mfrow=c(2,2), mar=c(4,4,2,1))
+par(mfrow=c(2,2), mar=c(4,4,2,1), bg="white")
 #plot the graphs
 with(filtereddata, {
     plot(Global_active_power~datetime, type="l", xlab="", ylab="Global Active Power")

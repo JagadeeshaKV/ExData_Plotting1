@@ -24,8 +24,10 @@ filtereddata$Date <- as.Date(filtereddata$Date, format="%d/%m/%Y")
 #combine date and time
 formatteddate <- paste(as.Date(filtereddata$Date), filtereddata$Time)
 filtereddata$Datetime <- as.POSIXct(formatteddate)
+#set background color to white
+par(bg="white")
 #plot the graphs
-with(filtereddata,plot(Datetime,Sub_metering_1,type="l",col="black", xlab="",ylab="Energy sub metering"))
+with(filtereddata,plot(Datetime,Sub_metering_1,type="l",col="black",  xlab="",ylab="Energy sub metering"))
 with(filtereddata,lines(Datetime,Sub_metering_2,col="red"))
 with(filtereddata,lines(Datetime,Sub_metering_3,col="blue"))
 #legend
